@@ -23,8 +23,8 @@ date-released: 2026-10-19
 license: MIT
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.23470386"
-    description: "Zenodo concept DOI for Waypoint (latest version; v0.1.1 release DOI is added after archiving)"
+    value: "10.5281/zenodo.23470564"
+    description: "Zenodo DOI for Waypoint v0.1.1 (concept DOI: 10.5281/zenodo.23470386)"
 keywords:
   - agent runtime
   - workflow persistence

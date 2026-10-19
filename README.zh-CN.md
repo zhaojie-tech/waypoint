@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Java 17](https://img.shields.io/badge/Java-17%20%2F%2021-orange.svg)](#快速开始)
 [![version](https://img.shields.io/badge/version-0.1.1-informational.svg)](CHANGELOG.md)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23470416.svg)](https://doi.org/10.5281/zenodo.23470416)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23470564.svg)](https://doi.org/10.5281/zenodo.23470564)
 [![artifact: research](https://img.shields.io/badge/artifact-research%20%C2%B7%20not%20production-purple.svg)](#范围)
 [![CI](https://github.com/zhaojie-tech/waypoint/actions/workflows/ci.yml/badge.svg)](https://github.com/zhaojie-tech/waypoint/actions/workflows/ci.yml)
 <!-- publish:badge:end -->
@@ -180,7 +180,7 @@ violation，因为框架没有承诺 exactly-once）、4 条 PASS 观测、2 条
 
 <!-- publish:citation:start -->
 - 本制品：`Jie Zhao. Waypoint: a machine-checkable recovery contract for agent runtimes, v0.1.1 (2026).`
-  机器可读元数据：[`CITATION.cff`](CITATION.cff)。DOI：[`10.5281/zenodo.23470386`](https://doi.org/10.5281/zenodo.23470386)（concept DOI，指向最新版本）。
+  机器可读元数据：[`CITATION.cff`](CITATION.cff)。DOI：[`10.5281/zenodo.23470564`](https://doi.org/10.5281/zenodo.23470564)（concept DOI：[`10.5281/zenodo.23470386`](https://doi.org/10.5281/zenodo.23470386)）。
 - C1–C6 所依据的论文：`Sajjad Khan. Resume Means Resume. arXiv:2608.03836, 2026.`
   <https://arxiv.org/abs/2608.03836>
 - 框架观测均使用 pinned 版本并引用公开文档原文。URL、节锚点与采集日期见 [`p2/REPORT.md`](p2/REPORT.md)。

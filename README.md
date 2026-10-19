@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Java 17](https://img.shields.io/badge/Java-17%20%2F%2021-orange.svg)](#quickstart)
 [![version](https://img.shields.io/badge/version-0.1.1-informational.svg)](CHANGELOG.md)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23470416.svg)](https://doi.org/10.5281/zenodo.23470416)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23470564.svg)](https://doi.org/10.5281/zenodo.23470564)
 [![artifact: research](https://img.shields.io/badge/artifact-research%20%C2%B7%20not%20production-purple.svg)](#scope)
 [![CI](https://github.com/zhaojie-tech/waypoint/actions/workflows/ci.yml/badge.svg)](https://github.com/zhaojie-tech/waypoint/actions/workflows/ci.yml)
 <!-- publish:badge:end -->
@@ -195,7 +195,7 @@ AgentScope Java (pinned coordinates, no runnable environment), and recovery engi
 
 <!-- publish:citation:start -->
 - This artifact: `Jie Zhao. Waypoint: a machine-checkable recovery contract for agent runtimes, v0.1.1 (2026).`
-  Machine-readable metadata: [`CITATION.cff`](CITATION.cff). DOI: [`10.5281/zenodo.23470386`](https://doi.org/10.5281/zenodo.23470386) (concept DOI, latest version).
+  Machine-readable metadata: [`CITATION.cff`](CITATION.cff). DOI: [`10.5281/zenodo.23470564`](https://doi.org/10.5281/zenodo.23470564) (concept DOI: [`10.5281/zenodo.23470386`](https://doi.org/10.5281/zenodo.23470386)).
 - The paper behind C1–C6: `Sajjad Khan. Resume Means Resume. arXiv:2608.03836, 2026.`
   <https://arxiv.org/abs/2608.03836>
 - Framework observations use pinned versions and quoted public documentation. URLs, section anchors and

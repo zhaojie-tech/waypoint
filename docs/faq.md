@@ -71,7 +71,7 @@ L1 is an auxiliary log-integrity check: duplicate completion, completion without
 
 ## Citation
 
-See `CITATION.cff` in the repository root. Cite the `v0.1.1` release or the concept DOI `10.5281/zenodo.23470386`. For the paper that inspired C1–C6, cite `arXiv 2608.03836` directly.
+See `CITATION.cff` in the repository root. Cite the `v0.1.1` release (DOI `10.5281/zenodo.23470564`) or the concept DOI `10.5281/zenodo.23470386`. For the paper that inspired C1–C6, cite `arXiv 2608.03836` directly.
 
 ## Third-party findings
 

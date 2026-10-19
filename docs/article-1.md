@@ -1,6 +1,6 @@
 # 给 Agent 运行时立恢复契约：57 个确定性崩溃点与 13 个注入违例
 
-> 2026-10-19 · Waypoint `v0.1.1` 研究制品记录。文中数字来自本机可复现的闸门，不是设计目标。数字的当前值以 [`README.md`](../README.md) 的冻结标记块与 `build/gate-result.json` 为准，校验脚本会比对两者。发布状态：仓库 https://github.com/zhaojie-tech/waypoint 与 DOI https://doi.org/10.5281/zenodo.23470386 已公开。
+> 2026-10-19 · Waypoint `v0.1.1` 研究制品记录。文中数字来自本机可复现的闸门，不是设计目标。数字的当前值以 [`README.md`](../README.md) 的冻结标记块与 `build/gate-result.json` 为准，校验脚本会比对两者。发布状态：仓库 https://github.com/zhaojie-tech/waypoint 与 DOI https://doi.org/10.5281/zenodo.23470564 已公开。
 
 ## 问题
 
