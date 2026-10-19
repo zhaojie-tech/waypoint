@@ -21,7 +21,7 @@ change.
 
 `build/gate-result.json` is ignored by git; only the canonical copy under `results/` is committed. The `jdk` field
 records the runtime that produced the numbers. The CI workflow runs the gate on JDK 17 and 21 for compatibility,
-but refreshes `results/gate.*` on JDK 17 only. At v0.1.0 the workflow has not run publicly yet.
+but refreshes `results/gate.*` on JDK 17 only. First public run: https://github.com/zhaojie-tech/waypoint/actions/runs/39228659294.
 
 Snapshot provenance: `p3-conformance.md` and `s1-matrix.md` were recorded on 2026-10-19 from the v0.1.0 tree by a
 local run. They are dated evidence of one run (the P3 concurrency count is race-dependent), not a CI-enforced

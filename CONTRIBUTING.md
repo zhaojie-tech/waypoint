@@ -7,8 +7,7 @@ claims need evidence: if something is not observed, label it unobservable; if it
 
 Requirements:
 
-- JDK 17 or newer (the code targets `--release 17`; the CI workflow also builds on JDK 21. The matrix is
-  configured, the first public run is pending).
+- JDK 17 or newer (the code targets `--release 17`; CI also builds on JDK 21).
 - Bash, `git`, and `python3` (used by `scripts/verify-docs.sh`).
 - Network access on the first build (the Maven wrapper downloads Maven 3.9.9 and dependencies). The runtime jar
   itself has zero third-party dependencies.
