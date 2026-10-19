@@ -5,15 +5,11 @@
 [![Java 17](https://img.shields.io/badge/Java-17%20%2F%2021-orange.svg)](#quickstart)
 [![version](https://img.shields.io/badge/version-0.1.0-informational.svg)](CHANGELOG.md)
 [![artifact: research](https://img.shields.io/badge/artifact-research%20%C2%B7%20not%20production-purple.svg)](#scope)
-<!-- badge-placeholder: replace OWNER/REPO after public repo URL exists
-[![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml)
--->
+[![CI](https://github.com/zhaojie-tech/waypoint/actions/workflows/ci.yml/badge.svg)](https://github.com/zhaojie-tech/waypoint/actions/workflows/ci.yml)
 <!-- publish:badge:end -->
 
 <!-- publish:notice:start -->
-> Pre-publication note. This README belongs to the `v0.1.0` research artifact. A public repository URL and a
-> DOI are not determined yet, so there is no clone URL and no live CI badge here. The placeholders above are
-> replaced once the repository is published. Chinese version: [`README.zh-CN.md`](README.zh-CN.md).
+> Status: `v0.1.0` research artifact, not production software. Public repository: https://github.com/zhaojie-tech/waypoint. 中文版: [`README.zh-CN.md`](README.zh-CN.md).
 <!-- publish:notice:end -->
 
 ## Overview
@@ -35,6 +31,7 @@ Prerequisites: JDK 17+ (JDK 21 is in the CI matrix; local runs at v0.1.0 used JD
 gate needs no third-party runtime dependencies and no network access.
 
 ```bash
+git clone https://github.com/zhaojie-tech/waypoint.git && cd waypoint   # or download the v0.1.0 archive
 # from the repository root: one command, prints all numbers, exit code is the verdict
 ./gate.sh
 ```
@@ -206,7 +203,7 @@ AgentScope Java (pinned coordinates, no runnable environment), and recovery engi
 
 ## Contributing
 
-Contributions are welcome once the repository is public. [`CONTRIBUTING.md`](CONTRIBUTING.md) covers the
+Contributions are welcome. [`CONTRIBUTING.md`](CONTRIBUTING.md) covers the
 development setup, the commands that must pass (`./gate.sh`, `./mvnw -B -q verify`, `make check`), how to add a
 contract or a mutant, and the norm for reporting findings about third-party frameworks (gap vs violation, a
 verbatim quote with URL and pinned version, upstream reproduction first). The other community files are

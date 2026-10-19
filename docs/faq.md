@@ -83,4 +83,4 @@ Publish framework findings as gaps unless the framework's own docs promise the p
 
 ## Repository URL and badges
 
-Not yet. This is a pre-publication artifact: there is no public repository URL at authoring time. Where a URL would be required (clone command, CI badge), the docs say so explicitly instead of inventing a URL. When the public repository exists, the placeholders and badges are enabled, and `CITATION.cff` and the Zenodo DOI are filled at the same time.
+Yes. The public repository is https://github.com/zhaojie-tech/waypoint; the CI badge and clone command are enabled. `CITATION.cff` carries the repository URL, and a Zenodo DOI is added when the record is minted.

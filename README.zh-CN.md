@@ -5,14 +5,11 @@
 [![Java 17](https://img.shields.io/badge/Java-17%20%2F%2021-orange.svg)](#快速开始)
 [![version](https://img.shields.io/badge/version-0.1.0-informational.svg)](CHANGELOG.md)
 [![artifact: research](https://img.shields.io/badge/artifact-research%20%C2%B7%20not%20production-purple.svg)](#范围)
-<!-- badge-placeholder: replace OWNER/REPO after public repo URL exists
-[![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml)
--->
+[![CI](https://github.com/zhaojie-tech/waypoint/actions/workflows/ci.yml/badge.svg)](https://github.com/zhaojie-tech/waypoint/actions/workflows/ci.yml)
 <!-- publish:badge:end -->
 
 <!-- publish:notice:start -->
-> 发布前说明：本 README 属于 `v0.1.0` 研究制品。公开仓库 URL 与 DOI 尚未确定，因此这里没有克隆地址，也没有
-> 真实 CI 徽章。上方占位符会在仓库发布后替换。English: [`README.md`](README.md)。
+> 状态：`v0.1.0` 研究制品，非生产软件。公开仓库：https://github.com/zhaojie-tech/waypoint。English: [`README.md`](README.md)。
 <!-- publish:notice:end -->
 
 ## 概览
@@ -31,6 +28,7 @@ Waypoint 是检验工具和复现包。它不运行 agent，也不是生产基�
 运行时库，也不需要联网。
 
 ```bash
+git clone https://github.com/zhaojie-tech/waypoint.git && cd waypoint   # 或下载 v0.1.0 归档
 # 在仓库根目录；一条命令打印全部数字，exit code 即结论
 ./gate.sh
 ```
@@ -188,7 +186,7 @@ violation，因为框架没有承诺 exactly-once）、4 条 PASS 观测、2 条
 
 ## 贡献
 
-仓库公开后欢迎贡献。[`CONTRIBUTING.md`](CONTRIBUTING.md) 说明了开发环境、必须通过的命令（`./gate.sh`、
+欢迎贡献。[`CONTRIBUTING.md`](CONTRIBUTING.md) 说明了开发环境、必须通过的命令（`./gate.sh`、
 `./mvnw -B -q verify`、`make check`）、如何新增契约或 mutant，以及报告第三方框架结论的规范（gap 与 violation
 的区分、逐字引文加 URL 与 pinned 版本、先做上游最小复现）。其他社区文件：
 [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md)、[`SECURITY.md`](SECURITY.md)、[`SUPPORT.md`](SUPPORT.md)、
