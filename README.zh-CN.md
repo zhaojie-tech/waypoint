@@ -178,7 +178,7 @@ violation，因为框架没有承诺 exactly-once）、4 条 PASS 观测、2 条
 
 <!-- publish:citation:start -->
 - 本制品：`Jie Zhao. Waypoint: a machine-checkable recovery contract for agent runtimes, v0.1.0 (2026).`
-  机器可读元数据：[`CITATION.cff`](CITATION.cff)。Zenodo DOI 待补，会在发布时加入。
+  机器可读元数据：[`CITATION.cff`](CITATION.cff)。DOI：[`10.5281/zenodo.23470416`](https://doi.org/10.5281/zenodo.23470416)。
 - C1–C6 所依据的论文：`Sajjad Khan. Resume Means Resume. arXiv:2608.03836, 2026.`
   <https://arxiv.org/abs/2608.03836>
 - 框架观测均使用 pinned 版本并引用公开文档原文。URL、节锚点与采集日期见 [`p2/REPORT.md`](p2/REPORT.md)。

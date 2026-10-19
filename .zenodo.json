@@ -21,5 +21,5 @@
     "mutation testing",
     "reproducibility"
   ],
-  "notes": "No DOI is assigned in this file. The maintainer must add the public repository URL and the DOI (if any) when the Zenodo record is created; do not invent them in advance."
+  "notes": "Public repository: https://github.com/zhaojie-tech/waypoint. DOI assigned: https://doi.org/10.5281/zenodo.23470416"
 }

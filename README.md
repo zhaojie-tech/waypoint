@@ -193,8 +193,7 @@ AgentScope Java (pinned coordinates, no runnable environment), and recovery engi
 
 <!-- publish:citation:start -->
 - This artifact: `Jie Zhao. Waypoint: a machine-checkable recovery contract for agent runtimes, v0.1.0 (2026).`
-  Machine-readable metadata: [`CITATION.cff`](CITATION.cff). A Zenodo DOI is pending and will be added at
-  publication.
+  Machine-readable metadata: [`CITATION.cff`](CITATION.cff). DOI: [`10.5281/zenodo.23470416`](https://doi.org/10.5281/zenodo.23470416).
 - The paper behind C1–C6: `Sajjad Khan. Resume Means Resume. arXiv:2608.03836, 2026.`
   <https://arxiv.org/abs/2608.03836>
 - Framework observations use pinned versions and quoted public documentation. URLs, section anchors and
