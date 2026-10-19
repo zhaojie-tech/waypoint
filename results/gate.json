@@ -1,0 +1,26 @@
+{
+  "baseline": {
+    "runs": 63,
+    "violations": 0
+  },
+  "c6": {
+    "orderStable": true,
+    "replayStable": true
+  },
+  "determinism": {
+    "equal": 100,
+    "total": 100
+  },
+  "jdk": "17",
+  "mutants": {
+    "captured": 13,
+    "total": 13
+  },
+  "pass": true,
+  "reportSha256": "09fa81ef83af05664b743b130849837af1186869fa11ba632a1c80e66f8b8f79",
+  "tornTail": {
+    "prefixIntact": true,
+    "survived": 9
+  },
+  "version": "0.1.0"
+}

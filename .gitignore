@@ -1,0 +1,29 @@
+# build outputs
+target/
+build/
+classes*/
+p3/classes/
+p4/classes/
+p2/lab/classes*/
+# vendored dependencies (fetched via Maven/pip — see p2/lab/pom*.xml)
+*.jar
+libs/
+libs-saa/
+libs*/
+.venv*/
+# runtime state (recreate via drivers)
+*.sqlite
+*.sqlite-*
+lg-ledger.json
+lgc-ledger.json
+p2/lab/*-ledger.json
+p2/lab/s1-raw-prefix.bin
+p2/lab/s1-checkpoint.json
+__pycache__/
+# results staging (committed files are written by scripts/update-results.sh)
+results/*.tmp
+# editor / OS noise
+*.swp
+*.lock
+.DS_Store
+Thumbs.db

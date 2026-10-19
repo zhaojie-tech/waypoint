@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: build (JDK ${{ matrix.java }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [ '17', '21' ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK ${{ matrix.java }}
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: maven
+
+      - name: Maven verify (compile + JUnit 5 tests + jar)
+        run: ./mvnw -B -q verify
+
+      - name: Calibration gate
+        run: ./gate.sh
+
+      - name: C-locale guard (javac must pin UTF-8 source encoding)
+        run: LC_ALL=C LANG=C ./gate.sh && LC_ALL=C LANG=C ./p4/gate.sh
+
+      - name: P4 S1/S2 matrix
+        run: ./p4/gate.sh
+
+      - name: Verify README marker blocks
+        run: ./scripts/verify-docs.sh --skip-gate
+
+      - name: Refresh committed gate evidence (JDK 17 only)
+        if: matrix.java == '17'
+        run: ./scripts/update-results.sh --skip-gate
+
+      - name: Results must be committed with metric changes (JDK 17 only)
+        if: matrix.java == '17'
+        run: git diff --exit-code -- results/
+
+      - name: No build artifacts tracked
+        run: |
+          if git ls-files | grep -Eq '(^|/)(target|build|classes|p3/classes|p4/classes)/|\.class$'; then
+            echo '::error::build artifacts are tracked in git:'
+            git ls-files | grep -E '(^|/)(target|build)/|\.class$'
+            exit 1
+          fi

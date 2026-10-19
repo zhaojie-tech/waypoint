@@ -1,0 +1,31 @@
+[1] recovery determinism: 100/100 replays hash-equal
+[1] same-seed reproducibility: stateHash identical
+[2] torn-tail self-test: kept 9/10 intact-prefix=yes (truncate-at-first-bad-record)
+[3] S_W1          runs=20  violations=0
+[3] S_W1_CKPT     runs=22  violations=0
+[3] S_W1_RESUME2  runs=8   violations=0
+[3] S_W2          runs=11  violations=0
+[3] S_W3          runs=2   violations=0
+[3] contract activity: C1 63/63 C2 63/63 C3 2/63 C4 11/63 C5 8/63 C6 63/63 S1 8/63 S2 8/63 S3 11/63
+[3] baseline specificity: 63 crash-runs, 0 contract violations (must be 0)
+[4] mutation calibration
+[4]   M1  effect-before-started-sync         target=C2  captured=yes findings=63   C2 :: effect k_charge applied 2x
+[4]   M2  started-not-synced                 target=C2  captured=yes findings=42   C2 :: effect k_charge applied before STEP_STARTED was synced (startedIdx=1, frontier=1)
+[4]   M3  recovery-retry-without-reconcile   target=C2  captured=yes findings=6    C2 :: effect k_charge applied 2x
+[4]   M4  replay-re-executes-completed       target=C2  captured=yes findings=84   C2 :: effect k_charge applied 4x
+[4]   M5  completion-order-step-ids          target=C6  captured=yes findings=1    C6 :: order-dependent canonical trace across seeds
+[4]   M6  checkpoint-fabricates-completed    target=C4  captured=yes findings=11   C4 :: checkpoint at record 4 marks root/notify COMPLETED but no STEP_COMPLETED for it exists in the log prefix
+[4]   M7  fork-shares-cursor                 target=C3  captured=yes findings=4    C3 :: fork children diverge (canonical event traces differ)
+[4]   M8  second-resumer-ignores-lease       target=C5  captured=yes findings=7    C5 :: effect for root/notify executed by resumer2 while the lease was owned by resumer1
+[4]   M9  cancel-boundary-overrun            target=S1  captured=yes findings=18   S1 :: cancel boundary 17 but 18 chunks recorded for root/gen
+[4]   M10 replay-regenerates-summary         target=S2  captured=yes findings=16   S2 :: summary was durable but replay re-invoked the model (1->4)
+[4]   M11 skip-unfinished-step               target=C1  captured=yes findings=36   C1 :: skipped unfinished step root/charge
+[4]   M12 replay-emits-wrong-chunks          target=S1  captured=yes findings=8    S1 :: replay emitted 18 chunks != K=17
+[4]   M13 metering-on-replay                 target=S3  captured=yes findings=11   S3 :: replay produced new metering entries (2->19)
+[4] mutations captured 13/13
+[5] locale independence: report formatting stable across ar-EG/tr-TR (Locale.ROOT)
+GATE: PASS | mutations 13/13 required | determinism/reproducibility required | baseline 0 false positives required | locale-independent formatting required
+
+report sha256=09fa81ef83af05664b743b130849837af1186869fa11ba632a1c80e66f8b8f79
+whole-gate reproducibility: 2/2 identical (same seed, same result)
+gate-result: build/gate-result.json

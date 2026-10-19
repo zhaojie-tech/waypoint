@@ -1,0 +1,69 @@
+name: Bug report
+description: Report a defect in the checker, gate, CLI, scripts, or documentation
+title: "[bug] "
+labels: [ "bug" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. **Do not include credentials or private data.**
+        Security issues: follow `SECURITY.md` instead of opening a public issue.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you observe, and why is it wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Exact commands, files or example inputs. Prefer a minimal case.
+      placeholder: |
+        1. git clone ...
+        2. ./gate.sh
+        3. observed ...
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What should have happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: gate-output
+    attributes:
+      label: Relevant output
+      description: |
+        For gate/checker issues, paste the full output and, if available,
+        `build/gate-result.json`. Redact anything sensitive.
+      render: text
+    validations:
+      required: false
+  - type: input
+    id: jdk
+    attributes:
+      label: JDK version
+      placeholder: "17.0.20.1 / 21.0.12.1"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS and architecture
+      placeholder: "Linux 5.15 x86_64 / macOS 14 arm64"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checks
+      options:
+        - label: I ran `./gate.sh` (and `./p4/gate.sh` if relevant) and included the output.
+          required: true
+        - label: I searched existing issues for duplicates.
+          required: true

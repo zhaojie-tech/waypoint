@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: >-
+  If you use Waypoint in academic work, please cite this software. A DOI and the
+  public repository URL will be added at release time; this file intentionally
+  does not invent them.
+title: >-
+  Waypoint: a recovery-contract checker and mutation-calibration bed for agent
+  and workflow runtimes
+abstract: >-
+  Waypoint provides a deterministic fault-injection calibration bed, a
+  machine-checkable set of recovery contracts (C1-C6, S1-S3, plus
+  log-integrity checks L1), a mutation-calibration gate (13 injected
+  violations, zero false positives on a healthy baseline), and adapters that
+  check real workflow frameworks against the same checker. This release is a
+  research artifact: contracts an adapter cannot observe are labelled
+  unobservable rather than silently passing.
+authors:
+  - family-names: Zhao
+    given-names: Jie
+type: software
+version: 0.1.0
+date-released: 2026-10-19
+license: MIT
+keywords:
+  - agent runtime
+  - workflow persistence
+  - checkpoint and resume
+  - recovery contract
+  - mutation testing
+  - reproducibility

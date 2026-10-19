@@ -1,0 +1,7 @@
+{"type":"RUN_STARTED","f1":"ORDER","f2":"v1"}
+{"type":"STEP_STARTED","f1":"root/charge","f2":"k_charge"}
+{"type":"STEP_COMPLETED","f1":"root/charge","f2":"ok:k_charge"}
+{"type":"CHECKPOINT","f1":"w1","f2":"root/charge=COMPLETED"}
+{"type":"STEP_STARTED","f1":"root/report","f2":"k_report"}
+{"type":"STEP_COMPLETED","f1":"root/report","f2":"ok:k_report"}
+{"type":"RUN_COMPLETED"}

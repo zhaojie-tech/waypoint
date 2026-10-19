@@ -1,0 +1,22 @@
+{
+  "scenario": "examples/external-log/clean",
+  "expectedSteps": ["root/charge", "root/report"],
+  "preCompletedKeys": ["k_charge"],
+  "preAppliedCounts": {"k_charge": 1},
+  "twoResumers": false,
+  "forkScenario": false,
+  "protocolObservable": true,
+  "preCompactionDurable": false,
+  "preSummarizeCalls": 0,
+  "configuredCancelAt": -1,
+  "replayChunksEmitted": -1,
+  "meteringPreEntries": 0,
+  "meteringFinalEntries": 0,
+  "interruptionKinds": [],
+  "unobservable": [],
+  "replayHashes": [
+    "0d4b6f3c0b8a6f4c5e2d1a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b0c9d",
+    "0d4b6f3c0b8a6f4c5e2d1a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b0c9d"
+  ],
+  "orderTraces": []
+}
