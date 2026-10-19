@@ -6,12 +6,12 @@ A stranger should be able to verify every published number in minutes, and to te
 
 | Environment | JDK | OS / CPU | Python | Used for |
 |---|---|---|---|---|
-| **CI workflow (GitHub Actions)**, configured, not yet run publicly at v0.1.0 | Temurin **17** and **21** | ubuntu-latest | 3.9.9 (wrapper) | `./mvnw -B -q verify`, `./gate.sh`, `./p4/gate.sh`, `./scripts/verify-docs.sh` |
+| **CI (GitHub Actions)**, public runs: https://github.com/zhaojie-tech/waypoint/actions/runs/39228659294 | Temurin **17** and **21** | ubuntu-latest | 3.9.9 (wrapper) | `./mvnw -B -q verify`, `./gate.sh`, `./p4/gate.sh`, `./scripts/verify-docs.sh` |
 | **Review/authoring host** | OpenJDK **17.0.20.1** | Linux 5.15, 4 cores | 3.10.12 | all local runs recorded in this document; P2 lab drivers |
 | **P2 lab runs (recorded in `p2/`)** | Temurin **21.0.12.1+1** | Linux 5.15, 4 cores | 3.10.12 (venv) | langgraph4j / spring-ai-alibaba / LangGraph(Python) drivers, real SIGKILL |
-| **JDK 21 locally** | not available on the authoring host at the time of v0.1.0 | n/a | n/a | JDK 17 is verified locally; JDK 21 is configured in the CI workflow only (no public run yet) |
+| **JDK 21 locally** | not available on the authoring host at the time of v0.1.0 | n/a | n/a | JDK 17 is verified locally; JDK 21 is verified by CI |
 
-The gate is designed to be independent of the JDK version. It compiles with `--release 17`, uses no preview APIs, no wall clock, no randomness and no locale-sensitive formatting (`Locale.ROOT` everywhere). The report sha256 should be identical across JDK 17/21 and across locales; the CI workflow is configured to check JDK 21, and the gate's negative-control tests check locale independence.
+The gate is designed to be independent of the JDK version. It compiles with `--release 17`, uses no preview APIs, no wall clock, no randomness and no locale-sensitive formatting (`Locale.ROOT` everywhere). The report sha256 should be identical across JDK 17/21 and across locales; CI checks JDK 21, and the gate's negative-control tests check locale independence.
 
 ## 2. Prerequisites
 
@@ -131,7 +131,7 @@ echo $?   # 1 = one C2 finding (use examples/external-log/clean/ for exit 0); 2 
 
 ## 6. Not reproducible here
 
-- JDK 21 locally: configured in CI only (see matrix). There is no public CI run or local JDK 21 verification at v0.1.0.
+- JDK 21 locally: verified by CI (see matrix), not verified locally at v0.1.0.
 - Real LLM calls: no key or endpoint is shipped. The captured SSE file is a fixed fixture, and the smoke does not call a model. See `p2/lab/captures/README.md` for provenance.
 - Power-loss and fsync-loss semantics: needs kernel fault injection (dm-flakey/dm-log-writes) or VM snapshots; not modeled. All crash evidence is process-crash evidence.
 - Distributed and multi-node behaviour: out of scope; `lease` is single-node and simulated.

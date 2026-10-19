@@ -27,7 +27,7 @@ quoted from its documentation or marked as a gap.
 ## Quickstart
 
 <!-- publish:quickstart:start -->
-Prerequisites: JDK 17+ (JDK 21 is in the CI matrix; local runs at v0.1.0 used JDK 17), `bash` and `find`. The
+Prerequisites: JDK 17+ (JDK 21 is verified by CI; local runs at v0.1.0 used JDK 17), `bash` and `find`. The
 gate needs no third-party runtime dependencies and no network access.
 
 ```bash
@@ -149,7 +149,7 @@ reproduction commands are in [`p2/REPORT.md`](p2/REPORT.md).
 | P4 S1/S2 matrix | `./p4/gate.sh` | JDK 17+ | cancellation-boundary matrix with active-run denominators and a sensitivity check → `build/s1-matrix.md` |
 | P3 conformance | `./p3/gate.sh` | JDK 17+, Maven and network on the first run | 2 frameworks × 4 fault forms through the real checker → `build/p3-report.md`; exits 2 with a prerequisite message when dependencies are missing |
 | P2 framework evidence | see `p2/lab/README.md` | Maven or Python venv, plus network | the 10 findings above (result files are tracked) |
-| Everything, one shot | `make check` | JDK 17+ (Maven optional) | gate, p4 and the docs check; the CI workflow runs the same steps on JDK 17/21 |
+| Everything, one shot | `make check` | JDK 17+ (Maven optional) | gate, p4 and the docs check; CI runs the same steps on JDK 17/21 |
 
 Prerequisites, expected output and the parts that are not reproducible on this machine are listed in
 [`docs/reproducibility.md`](docs/reproducibility.md).
@@ -186,7 +186,7 @@ AgentScope Java (pinned coordinates, no runnable environment), and recovery engi
 7. P3 adapters synthesize `ApplyRecord` metadata where the framework does not expose record indices, and the
    report marks those fields as synthetic. C2 conclusions from P3 are therefore limited to effect counts.
 8. There is no performance work, no production hardening and no compatibility guarantee across versions.
-9. JDK 21 appears only in the CI matrix. There is no public CI run yet, and local runs at v0.1.0 used JDK 17.
+9. JDK 21 is verified by CI (https://github.com/zhaojie-tech/waypoint/actions/runs/39228659294); local runs at v0.1.0 used JDK 17.
 10. Do not run agents on this code. It is a checker and a replication package, not production-ready software.
 
 ## Citation

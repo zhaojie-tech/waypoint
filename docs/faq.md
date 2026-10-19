@@ -61,7 +61,7 @@ The checker is a pure deterministic function over logs: no third-party runtime d
 
 ## Platforms: JDK 21 and Windows
 
-JDK 17 is what is verified locally. JDK 21 is configured in the CI matrix; there is no public CI run at `v0.1.0` yet. Both should work because the gates compile with `--release 17`, and the published report sha should be identical across them when the CI workflow runs.
+JDK 17 is what is verified locally. JDK 21 is verified by CI (https://github.com/zhaojie-tech/waypoint/actions/runs/39228659294). Both work because the gates compile with `--release 17`, and the published report sha is identical across them.
 
 Windows is not a native target. The gates are bash scripts, so use WSL or Git Bash. There is no `.bat` launcher.
 

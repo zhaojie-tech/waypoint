@@ -59,7 +59,7 @@ P4 的 S1/S2 取消边界矩阵用确定性崩溃点扫 K∈{3,10,17,30}，共 1
 - 适配器覆盖是部分的：不可观测的检查记为 unobservable，不计为通过。
 - P2 只测了 5 个 pinned 框架中的 3 个；AgentScope 与 Diagrid 未实测（坐标 pinned，原因写明）。
 - 真实 LLM 驱动恢复引擎未测；P4 冒烟只验证字节持久化。
-- JDK 17 本地验证，JDK 21 纳入 CI 矩阵（v0.1.0 尚无公开运行记录）；Windows 非原生目标（bash gates）。
+- JDK 17 本地验证，JDK 21 已由 CI 验证；Windows 非原生目标（bash gates）。
 - 不是生产组件：这是检验器与复现包，不要用这套代码跑 agent。
 
 ## 复现
