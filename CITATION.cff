@@ -18,13 +18,13 @@ authors:
 type: software
 repository-code: "https://github.com/zhaojie-tech/waypoint"
 url: "https://github.com/zhaojie-tech/waypoint"
-version: 0.1.0
+version: 0.1.1
 date-released: 2026-10-19
 license: MIT
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.23470416"
-    description: "Zenodo DOI for Waypoint v0.1.0"
+    value: "10.5281/zenodo.23470386"
+    description: "Zenodo concept DOI for Waypoint (latest version; v0.1.1 release DOI is added after archiving)"
 keywords:
   - agent runtime
   - workflow persistence

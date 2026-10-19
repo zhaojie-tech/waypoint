@@ -10,7 +10,7 @@
 #   <!-- gate:mutants -->13/13<!-- /gate:mutants -->
 #   <!-- gate:sha --><64 lowercase hex><!-- /gate:sha -->
 #
-# Optional keys: pass (PASS/FAIL), version (0.1.0).
+# Optional keys: pass (PASS/FAIL), version (0.1.1).
 set -uo pipefail
 cd "$(dirname "$0")/.."
 

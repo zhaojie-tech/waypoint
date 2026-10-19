@@ -100,4 +100,4 @@ behaviour. S1's replay and cancel properties are tested on the deterministic bed
 cat build/s1-matrix.md                          # the exact numbers above, regenerated
 ```
 
-The matrix numbers are regenerated on every run; the values above are from the latest `v0.1.0` gate run.
+The matrix numbers are regenerated on every run; the values above are from the latest `v0.1.1` gate run.

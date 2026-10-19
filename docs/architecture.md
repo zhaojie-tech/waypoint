@@ -1,6 +1,6 @@
 # Architecture
 
-Status: v0.1.0. English summary: [`README.md`](../README.md). Chinese front page: [`README.zh-CN.md`](../README.zh-CN.md).
+Status: v0.1.1. English summary: [`README.md`](../README.md). Chinese front page: [`README.zh-CN.md`](../README.zh-CN.md).
 
 Waypoint is a research and verification tool, not a production runtime component. It asks one question: when an agent or workflow runtime crashes and resumes, does its durable log satisfy the recovery properties it claims? To answer that without trusting the runtime under test, the work is done in a fixed order: formalize the contracts, show the checker can catch known violations with mutation calibration, then test third-party frameworks.
 

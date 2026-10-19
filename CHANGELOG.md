@@ -8,6 +8,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Nothing yet.
 
+## [0.1.1] - 2026-10-19
+
+Documentation and metadata patch. The checker, contracts, CLI and calibration numbers are unchanged.
+
+### Added
+
+- Zenodo archiving and a DOI. `CITATION.cff` carries the concept DOI; the v0.1.1 version DOI is assigned
+  when Zenodo archives this release.
+- The first public CI run is recorded in the README and reproducibility docs (JDK 17 and 21).
+- Release assets: executable jar and `SHA256SUMS`.
+
+### Changed
+
+- Version bumped to 0.1.1 in the Maven build, CLI/API version strings and documentation.
+- Results provenance notes updated for the published repository.
+
 ## [0.1.0] - 2026-10-19
 
 First public release of Waypoint as a research artifact and developer tool. The release concentrates on

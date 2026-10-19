@@ -1,4 +1,4 @@
-# Reproducibility (v0.1.0)
+# Reproducibility (v0.1.1)
 
 A stranger should be able to verify every published number in minutes, and to tell which numbers are not reproducible on their machine and why. README numbers are frozen marker blocks validated by `scripts/verify-docs.sh` against `build/gate-result.json`; this document explains how to obtain them.
 
@@ -9,7 +9,7 @@ A stranger should be able to verify every published number in minutes, and to te
 | **CI (GitHub Actions)**, public runs: https://github.com/zhaojie-tech/waypoint/actions/runs/39228659294 | Temurin **17** and **21** | ubuntu-latest | 3.9.9 (wrapper) | `./mvnw -B -q verify`, `./gate.sh`, `./p4/gate.sh`, `./scripts/verify-docs.sh` |
 | **Review/authoring host** | OpenJDK **17.0.20.1** | Linux 5.15, 4 cores | 3.10.12 | all local runs recorded in this document; P2 lab drivers |
 | **P2 lab runs (recorded in `p2/`)** | Temurin **21.0.12.1+1** | Linux 5.15, 4 cores | 3.10.12 (venv) | langgraph4j / spring-ai-alibaba / LangGraph(Python) drivers, real SIGKILL |
-| **JDK 21 locally** | not available on the authoring host at the time of v0.1.0 | n/a | n/a | JDK 17 is verified locally; JDK 21 is verified by CI |
+| **JDK 21 locally** | not available on the authoring host at the time of v0.1.0/v0.1.1 | n/a | n/a | JDK 17 is verified locally; JDK 21 is verified by CI |
 
 The gate is designed to be independent of the JDK version. It compiles with `--release 17`, uses no preview APIs, no wall clock, no randomness and no locale-sensitive formatting (`Locale.ROOT` everywhere). The report sha256 should be identical across JDK 17/21 and across locales; CI checks JDK 21, and the gate's negative-control tests check locale independence.
 
@@ -74,7 +74,7 @@ echo $?          # 0 = PASS, 1 = FAIL, 2 = missing JDK
 
 Expected shape: per-cancel-point rows with total crash-runs, S1-active runs (the assertions actually executable at that boundary) and violations, followed by a sensitivity section. The sensitivity check injects the S1 mutants `M9`/`M12` and requires S1 violations; if either produces none, the gate fails.
 
-Latest `v0.1.0` run: 4 boundaries (`K ∈ {3,10,17,30}`), 188 runs and 48 S1-active runs (40 real crash runs + 8 no-crash controls); 0 S1/S2 violations over the active denominator; sensitivity M9 → 24 S1 findings in 53 runs, M12 → 12 S1 findings in 51 runs; gate PASS. Full table and the denominator caveat: [`p4/README.md`](../p4/README.md).
+Latest `v0.1.1` run: 4 boundaries (`K ∈ {3,10,17,30}`), 188 runs and 48 S1-active runs (40 real crash runs + 8 no-crash controls); 0 S1/S2 violations over the active denominator; sensitivity M9 → 24 S1 findings in 53 runs, M12 → 12 S1 findings in 51 runs; gate PASS. Full table and the denominator caveat: [`p4/README.md`](../p4/README.md).
 
 If `p2/lab/.venv-py` and `p2/lab/real-llm-sse.txt` are present, a real-LLM SSE byte-prefix persistence round-trip runs. Otherwise it prints `skip real-LLM smoke ...` and the gate still passes; the smoke is evidence, not a gate requirement.
 
@@ -119,8 +119,8 @@ The recorded environment is in [`p2/REPORT.md`](../p2/REPORT.md) (JDK 21.0.12.1+
 ```bash
 # build a jar (Maven) or use the classpath from ./gate.sh
 ./mvnw -B -q -DskipTests package
-java -jar target/waypoint-0.1.0.jar version
-java -jar target/waypoint-0.1.0.jar check \
+java -jar target/waypoint-0.1.1.jar version
+java -jar target/waypoint-0.1.1.jar check \
   --events examples/external-log/violation/events.jsonl \
   --ledger examples/external-log/violation/ledger.jsonl \
   --meta   examples/external-log/violation/meta.json
@@ -131,7 +131,7 @@ echo $?   # 1 = one C2 finding (use examples/external-log/clean/ for exit 0); 2 
 
 ## 6. Not reproducible here
 
-- JDK 21 locally: verified by CI (see matrix), not verified locally at v0.1.0.
+- JDK 21 locally: verified by CI (see matrix), not verified locally at v0.1.0/v0.1.1.
 - Real LLM calls: no key or endpoint is shipped. The captured SSE file is a fixed fixture, and the smoke does not call a model. See `p2/lab/captures/README.md` for provenance.
 - Power-loss and fsync-loss semantics: needs kernel fault injection (dm-flakey/dm-log-writes) or VM snapshots; not modeled. All crash evidence is process-crash evidence.
 - Distributed and multi-node behaviour: out of scope; `lease` is single-node and simulated.

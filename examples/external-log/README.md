@@ -27,21 +27,21 @@ Then:
 
 ```bash
 # clean example (human-readable)
-java -jar target/waypoint-0.1.0.jar check \
+java -jar target/waypoint-0.1.1.jar check \
   --events examples/external-log/clean/events.jsonl \
   --ledger examples/external-log/clean/ledger.jsonl \
   --meta   examples/external-log/clean/meta.json
 echo "exit=$?"        # 0
 
 # clean example (machine-readable)
-java -jar target/waypoint-0.1.0.jar check \
+java -jar target/waypoint-0.1.1.jar check \
   --events examples/external-log/clean/events.jsonl \
   --ledger examples/external-log/clean/ledger.jsonl \
   --meta   examples/external-log/clean/meta.json \
   --format json
 
 # violation example
-java -jar target/waypoint-0.1.0.jar check \
+java -jar target/waypoint-0.1.1.jar check \
   --events examples/external-log/violation/events.jsonl \
   --ledger examples/external-log/violation/ledger.jsonl \
   --meta   examples/external-log/violation/meta.json
@@ -54,7 +54,7 @@ If you do not have the jar yet, the same command works with the compiled classes
 java -cp target/classes waypoint.cli.Main check --events ... --ledger ... --meta ...
 ```
 
-## Expected output (verified with `v0.1.0`)
+## Expected output (verified with `v0.1.1`)
 
 `clean/`, text format:
 
@@ -68,7 +68,7 @@ unobservable: C3, S1, S3
 `clean/`, JSON format (`--format json`):
 
 ```json
-{"version":"0.1.0","scenario":"examples/external-log/clean","findings":[],"summary":{"findings":0,"clean":true,"contracts":[],"unobservable":["C3","S1","S3"],"protocolObservable":true}}
+{"version":"0.1.1","scenario":"examples/external-log/clean","findings":[],"summary":{"findings":0,"clean":true,"contracts":[],"unobservable":["C3","S1","S3"],"protocolObservable":true}}
 ```
 
 `violation/`, text format:
@@ -84,7 +84,7 @@ unobservable: C3, S1, S3
 `violation/`, JSON format (`--format json`):
 
 ```json
-{"version":"0.1.0","scenario":"examples/external-log/violation","findings":[{"contract":"C2","detail":"effect k_charge applied 2x"}],"summary":{"findings":1,"clean":false,"contracts":["C2"],"unobservable":["C3","S1","S3"],"protocolObservable":true}}
+{"version":"0.1.1","scenario":"examples/external-log/violation","findings":[{"contract":"C2","detail":"effect k_charge applied 2x"}],"summary":{"findings":1,"clean":false,"contracts":["C2"],"unobservable":["C3","S1","S3"],"protocolObservable":true}}
 ```
 
 Exit codes are the contract with CI: `0` clean, `1` findings, `2` usage or IO error.

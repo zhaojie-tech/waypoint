@@ -3,14 +3,14 @@
 <!-- publish:badge:start -->
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Java 17](https://img.shields.io/badge/Java-17%20%2F%2021-orange.svg)](#快速开始)
-[![version](https://img.shields.io/badge/version-0.1.0-informational.svg)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-0.1.1-informational.svg)](CHANGELOG.md)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23470416.svg)](https://doi.org/10.5281/zenodo.23470416)
 [![artifact: research](https://img.shields.io/badge/artifact-research%20%C2%B7%20not%20production-purple.svg)](#范围)
 [![CI](https://github.com/zhaojie-tech/waypoint/actions/workflows/ci.yml/badge.svg)](https://github.com/zhaojie-tech/waypoint/actions/workflows/ci.yml)
 <!-- publish:badge:end -->
 
 <!-- publish:notice:start -->
-> 状态：`v0.1.0` 研究制品，非生产软件。公开仓库：https://github.com/zhaojie-tech/waypoint。English: [`README.md`](README.md)。
+> 状态：`v0.1.1` 研究制品，非生产软件。公开仓库：https://github.com/zhaojie-tech/waypoint。English: [`README.md`](README.md)。
 <!-- publish:notice:end -->
 
 ## 概览
@@ -25,11 +25,11 @@ Waypoint 是检验工具和复现包。它不运行 agent，也不是生产基�
 ## 快速开始
 
 <!-- publish:quickstart:start -->
-环境要求：JDK 17+（JDK 21 已由 CI 验证；v0.1.0 的本地运行使用 JDK 17）、`bash`、`find`。闸门不依赖第三方
+环境要求：JDK 17+（JDK 21 已由 CI 验证；v0.1.1 的本地运行使用 JDK 17）、`bash`、`find`。闸门不依赖第三方
 运行时库，也不需要联网。
 
 ```bash
-git clone https://github.com/zhaojie-tech/waypoint.git && cd waypoint   # 或下载 v0.1.0 归档
+git clone https://github.com/zhaojie-tech/waypoint.git && cd waypoint   # 或下载 v0.1.1 归档
 # 在仓库根目录；一条命令打印全部数字，exit code 即结论
 ./gate.sh
 ```
@@ -42,7 +42,7 @@ git clone https://github.com/zhaojie-tech/waypoint.git && cd waypoint   # 或下
 
 ```bash
 ./mvnw -B -q -DskipTests package
-java -jar target/waypoint-0.1.0.jar check \
+java -jar target/waypoint-0.1.1.jar check \
   --events examples/external-log/violation/events.jsonl \
   --ledger examples/external-log/violation/ledger.jsonl \
   --meta   examples/external-log/violation/meta.json
@@ -63,7 +63,7 @@ echo $?    # 1 = 一条 C2 finding · 用 examples/external-log/clean/ 则 exit 
 | Mutation 校准 | <!-- gate:mutants -->13/13<!-- /gate:mutants --> | 每个注入违例都在目标契约上被捕获（清单见 `docs/mutations.md`） |
 | 闸门结论 | <!-- gate:pass -->PASS<!-- /gate:pass --> | 由数值字段计算，不依赖报告文本；5 类退化必须 exit 非 0 |
 | 报告 sha256 | <!-- gate:sha -->09fa81ef83af05664b743b130849837af1186869fa11ba632a1c80e66f8b8f79<!-- /gate:sha --> | 整份闸门报告的字节级身份 |
-| 版本 | <!-- gate:version -->0.1.0<!-- /gate:version --> | 本 README 对应的发布版本 |
+| 版本 | <!-- gate:version -->0.1.1<!-- /gate:version --> | 本 README 对应的发布版本 |
 
 中文与英文 README 使用同一组标记，CI 也重复这项检查，数字不会在文档之间漂移。机器可读事实源是
 `build/gate-result.json`；PASS 判据是对确定性命中数、torn-tail 存活、基线 runs/violations 和 mutants 捕获数
@@ -139,7 +139,7 @@ violation，因为框架没有承诺 exactly-once）、4 条 PASS 观测、2 条
 | P4 S1/S2 矩阵 | `./p4/gate.sh` | JDK 17+ | 带 active 分母与灵敏度检查的取消边界矩阵 → `build/s1-matrix.md` |
 | P3 符合性 | `./p3/gate.sh` | JDK 17+，首次需 Maven 与网络 | 真实 Checker × 2 框架 × 4 故障形态 → `build/p3-report.md`；缺依赖时 exit 2 并提示前置 |
 | P2 框架证据 | 见 `p2/lab/README.md` | Maven 或 Python venv，另需网络 | 上述 10 条 findings（结果文件随仓） |
-| 一次全跑 | `make check` | JDK 17+（Maven 可选） | 闸门、p4 与文档检查；CI 工作流在 JDK 17/21 上跑同一套步骤（v0.1.0 时尚无公开运行记录） |
+| 一次全跑 | `make check` | JDK 17+（Maven 可选） | 闸门、p4 与文档检查；CI 在 JDK 17/21 上跑同一套步骤（见 CI badge） |
 
 前置条件、预期输出与本机无法复现的部分见 [`docs/reproducibility.md`](docs/reproducibility.md)。
 
@@ -151,7 +151,8 @@ violation，因为框架没有承诺 exactly-once）、4 条 PASS 观测、2 条
 | P2 | 真实框架对照：10 findings，3 框架已测，2 个坐标 pinned 但未测 | 完成（证据分级） |
 | P3 | 适配器原型：真实 Checker × 2 框架 × 4 故障形态，覆盖与不可观测项已披露 | 完成 |
 | P4 | S1/S2 取消边界矩阵（带 active 分母与灵敏度），以及真实 LLM SSE 字节前缀冒烟 | 完成 |
-| v0.1.0 | 结构化闸门判据、崩溃语义与文档对齐、C1–C6/S1–S3 与 L1 落地、CLI/API、CI、打包 | 本版本 |
+| v0.1.1 | DOI 与引用元数据、CI 已验证 JDK 21 的表述、结果来源说明与徽章 | 本版本 |
+| v0.1.0 | 结构化闸门判据、崩溃语义与文档对齐、C1–C6/S1–S3 与 L1 落地、CLI/API、CI、打包 | 首个公开版本 |
 
 未测且已记录为未测：掉电语义、分布式或多机运行、Diagrid Catalyst 与 AgentScope Java（坐标 pinned，无可运行
 环境）、真实 LLM 驱动的恢复引擎。
@@ -172,14 +173,14 @@ violation，因为框架没有承诺 exactly-once）、4 条 PASS 观测、2 条
 7. P3 适配器在框架不暴露记录索引处合成 `ApplyRecord` 元数据，报告把这些字段标为 synthetic。P3 对 C2 的
    结论因此限于生效次数。
 8. 没有性能工程、没有生产加固、不承诺跨版本兼容。
-9. JDK 21 已由 CI 验证；v0.1.0 的本地运行使用 JDK 17。
+9. JDK 21 已由 CI 验证；v0.1.1 的本地运行使用 JDK 17。
 10. 不要用这套代码跑 agent。它是检验器与复现包，不是生产就绪软件。
 
 ## 引用
 
 <!-- publish:citation:start -->
-- 本制品：`Jie Zhao. Waypoint: a machine-checkable recovery contract for agent runtimes, v0.1.0 (2026).`
-  机器可读元数据：[`CITATION.cff`](CITATION.cff)。DOI：[`10.5281/zenodo.23470416`](https://doi.org/10.5281/zenodo.23470416)。
+- 本制品：`Jie Zhao. Waypoint: a machine-checkable recovery contract for agent runtimes, v0.1.1 (2026).`
+  机器可读元数据：[`CITATION.cff`](CITATION.cff)。DOI：[`10.5281/zenodo.23470386`](https://doi.org/10.5281/zenodo.23470386)（concept DOI，指向最新版本）。
 - C1–C6 所依据的论文：`Sajjad Khan. Resume Means Resume. arXiv:2608.03836, 2026.`
   <https://arxiv.org/abs/2608.03836>
 - 框架观测均使用 pinned 版本并引用公开文档原文。URL、节锚点与采集日期见 [`p2/REPORT.md`](p2/REPORT.md)。

@@ -117,7 +117,7 @@ class GateVerdictTest {
         r.reportSha256 = "abc123";
         String json = r.json();
         for (String needle : new String[]{
-                "\"version\":\"0.1.0\"", "\"jdk\":\"", "\"determinism\":{\"equal\":100,\"total\":100}",
+                "\"version\":\"0.1.1\"", "\"jdk\":\"", "\"determinism\":{\"equal\":100,\"total\":100}",
                 "\"tornTail\":{\"survived\":9,\"prefixIntact\":true}",
                 "\"baseline\":{\"runs\":63,\"violations\":0}",
                 "\"mutants\":{\"captured\":13,\"total\":13}",

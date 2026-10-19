@@ -71,7 +71,7 @@ import java.util.Set;
 public final class Waypoint {
 
     /** Version of the Waypoint jar/API, kept in sync with {@code pom.xml}. */
-    public static final String VERSION = "0.1.0";
+    public static final String VERSION = "0.1.1";
 
     private Waypoint() {}
 
@@ -244,7 +244,7 @@ public final class Waypoint {
      * Render findings as machine-readable JSON (the same JSON the CLI prints for
      * {@code --format json}). Shape:
      * <pre>{@code
-     * {"version":"0.1.0","scenario":"...","findings":[{"contract":"C2","detail":"..."}],
+     * {"version":"0.1.1","scenario":"...","findings":[{"contract":"C2","detail":"..."}],
      *  "summary":{"findings":1,"clean":false,"contracts":["C2"],
      *             "unobservable":[],"partial":[],"protocolObservable":true}}
      * }</pre>

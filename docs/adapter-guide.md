@@ -6,7 +6,7 @@ Requirements and inputs:
 
 - Java 17+, with no third-party runtime dependencies.
 - Input files are UTF-8 JSON or JSONL; formats are in [File formats](#2-file-formats).
-- Run `java -jar waypoint-0.1.0.jar check ...` or use the Java API [`waypoint.api.Waypoint`](../src/main/java/waypoint/api/Waypoint.java).
+- Run `java -jar waypoint-0.1.1.jar check ...` or use the Java API [`waypoint.api.Waypoint`](../src/main/java/waypoint/api/Waypoint.java).
 - Runnable examples are in [`examples/external-log/`](../examples/external-log/).
 - Contract definitions are in [`docs/contracts.md`](contracts.md).
 
@@ -81,7 +81,7 @@ An empty ledger makes C2 (entirely effect-based) unobservable, and C5 has no evi
 ### 25–30 min: run the checker and declare what you cannot see
 
 ```bash
-java -jar waypoint-0.1.0.jar check \
+java -jar waypoint-0.1.1.jar check \
   --events events.jsonl --ledger ledger.jsonl \
   --model model.jsonl --meta meta.json --format json
 ```
@@ -176,7 +176,7 @@ waypoint help [check|calibrate]
 `--format text` (default) prints the human report. `--format json` prints a stable machine-readable shape:
 
 ```json
-{"version":"0.1.0","scenario":"...","findings":[{"contract":"C2","detail":"..."}],
+{"version":"0.1.1","scenario":"...","findings":[{"contract":"C2","detail":"..."}],
  "summary":{"findings":1,"clean":false,"contracts":["C2"],
             "unobservable":["C3","S1","S3"],"protocolObservable":true}}
 ```
@@ -186,7 +186,7 @@ Exit codes: `0` clean, `1` findings, `2` usage or IO error (bad JSON, unknown fi
 CI snippet:
 
 ```yaml
-- run: java -jar target/waypoint-0.1.0.jar check \
+- run: java -jar target/waypoint-0.1.1.jar check \
          --events build/events.jsonl --ledger build/ledger.jsonl \
          --meta build/meta.json --format json > build/check.json
   # non-zero fails the job: 1 = contract findings, 2 = bad inputs
@@ -194,7 +194,7 @@ CI snippet:
 
 ## 6. Java API
 
-Coordinate: `tech.zhaojie:waypoint:0.1.0` (`./mvnw -B -q install` while it is not in a public repository). Requires Java 17+ and no runtime dependencies.
+Coordinate: `tech.zhaojie:waypoint:0.1.1` (`./mvnw -B -q install` while it is not in a public repository). Requires Java 17+ and no runtime dependencies.
 
 ```java
 import waypoint.Checker;

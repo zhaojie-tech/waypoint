@@ -22,7 +22,7 @@ import java.util.*;
  */
 public final class Calibrate {
 
-    static final String VERSION = "0.1.0";
+    static final String VERSION = "0.1.1";
     static final String[] CONTRACTS = {"C1", "C2", "C3", "C4", "C5", "C6", "S1", "S2", "S3"};
     static final int BASELINE_RUNS = 63;
     static final int MUTANTS_TOTAL = 13;

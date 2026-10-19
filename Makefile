@@ -9,7 +9,7 @@ MVN ?= $(shell if [ -x ./mvnw ]; then echo ./mvnw; elif command -v mvn >/dev/nul
 
 help:
 	@echo "Waypoint make targets:"
-	@echo "  make build        Compile and package target/waypoint-0.1.0.jar (Maven; javac fallback)"
+	@echo "  make build        Compile and package target/waypoint-0.1.1.jar (Maven; javac fallback)"
 	@echo "  make test         Run the JUnit 5 test suite (Maven)"
 	@echo "  make verify       Maven verify: compile + tests + jar"
 	@echo "  make gate         Run the calibration gate (./gate.sh)"

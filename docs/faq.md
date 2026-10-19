@@ -6,7 +6,7 @@ Waypoint is a verification tool for agent and workflow runtimes. It defines nine
 
 ## Production status
 
-No. Waypoint does not execute agents; it audits logs. The repository contains a checker, a deterministic calibration bed and framework drivers, published as the `v0.1.0` research artifact. The rule for claims is simple: every number has a reproduction path, and a violation needs the framework's own quoted promise.
+No. Waypoint does not execute agents; it audits logs. The repository contains a checker, a deterministic calibration bed and framework drivers, published as the `v0.1.1` research artifact. The rule for claims is simple: every number has a reproduction path, and a violation needs the framework's own quoted promise.
 
 ## Gate verdict
 
@@ -41,7 +41,7 @@ The crash points are deterministic operation boundaries, not random fuzzing. The
 Yes. The CLI and API read your event and external-ground-truth files in the documented JSONL format:
 
 ```bash
-java -jar target/waypoint-0.1.0.jar check \
+java -jar target/waypoint-0.1.1.jar check \
   --events my-events.jsonl --ledger my-ledger.jsonl --meta my-meta.json
 ```
 
@@ -71,7 +71,7 @@ L1 is an auxiliary log-integrity check: duplicate completion, completion without
 
 ## Citation
 
-See `CITATION.cff` in the repository root. Cite the `v0.1.0` release; the archived Zenodo DOI will be filled in when the repository is published. For the paper that inspired C1–C6, cite `arXiv 2608.03836` directly.
+See `CITATION.cff` in the repository root. Cite the `v0.1.1` release or the concept DOI `10.5281/zenodo.23470386`. For the paper that inspired C1–C6, cite `arXiv 2608.03836` directly.
 
 ## Third-party findings
 

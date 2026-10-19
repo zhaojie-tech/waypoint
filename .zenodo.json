@@ -8,7 +8,7 @@
   ],
   "upload_type": "software",
   "publication_date": "2026-10-19",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "mit",
   "access_right": "open",
   "language": "eng",
@@ -21,5 +21,5 @@
     "mutation testing",
     "reproducibility"
   ],
-  "notes": "Public repository: https://github.com/zhaojie-tech/waypoint. DOI assigned: https://doi.org/10.5281/zenodo.23470416"
+  "notes": "Public repository: https://github.com/zhaojie-tech/waypoint. Concept DOI: https://doi.org/10.5281/zenodo.23470386. The v0.1.0 version DOI is https://doi.org/10.5281/zenodo.23470416; the v0.1.1 version DOI is assigned by Zenodo on archiving."
 }

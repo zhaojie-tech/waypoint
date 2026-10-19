@@ -1,7 +1,7 @@
-# Waypoint P2 对照报告：真实框架实测（v0.1.0 版）
+# Waypoint P2 对照报告：真实框架实测（v0.1.1 版）
 
-> 检验器：Waypoint `v0.1.0`（P1 gate：mutation 校准全部捕获，健康基线 0 误报；复现：根目录 `./gate.sh`）。
-> 观测快照：`v0.1.0`。P2 驱动器与结果文件与采集时一致，v0.1.0 只清理了未使用产物。
+> 检验器：Waypoint `v0.1.1`（P1 gate：mutation 校准全部捕获，健康基线 0 误报；复现：根目录 `./gate.sh`）。
+> 观测快照：`v0.1.0`（P2 结果文件自该版本起未变）。
 > §1 说明证据强度分级，每条 finding 的复现命令、证据文件与引文出处（URL、pin、节锚点、采集日）见 §2 与 §3。
 > 写作规则：没有实测不写结论；没有框架承诺原文不写 violation，只写 gap；引文无法逐字核对时标
 > `paraphrase` 或 `unverified-url`，不写成已验证。
@@ -10,7 +10,7 @@
 
 | 项 | 值 |
 |---|---|
-| Waypoint 观测快照 | `v0.1.0` |
+| Waypoint 观测快照 | `v0.1.0`（结果文件自该版本起未变） |
 | 观测机器 | Linux 5.15（4C），JDK Temurin 21.0.12.1+1，Python 3.10.12（venv） |
 | langgraph4j | `org.bsc.langgraph4j:langgraph4j-core:1.9.5` |
 | Spring AI Alibaba Graph | `com.alibaba.cloud.ai:spring-ai-alibaba-graph-core:1.1.2.4-security-fix` |

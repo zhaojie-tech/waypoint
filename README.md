@@ -3,14 +3,14 @@
 <!-- publish:badge:start -->
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Java 17](https://img.shields.io/badge/Java-17%20%2F%2021-orange.svg)](#quickstart)
-[![version](https://img.shields.io/badge/version-0.1.0-informational.svg)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-0.1.1-informational.svg)](CHANGELOG.md)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23470416.svg)](https://doi.org/10.5281/zenodo.23470416)
 [![artifact: research](https://img.shields.io/badge/artifact-research%20%C2%B7%20not%20production-purple.svg)](#scope)
 [![CI](https://github.com/zhaojie-tech/waypoint/actions/workflows/ci.yml/badge.svg)](https://github.com/zhaojie-tech/waypoint/actions/workflows/ci.yml)
 <!-- publish:badge:end -->
 
 <!-- publish:notice:start -->
-> Status: `v0.1.0` research artifact, not production software. Public repository: https://github.com/zhaojie-tech/waypoint. 中文版: [`README.zh-CN.md`](README.zh-CN.md).
+> Status: `v0.1.1` research artifact, not production software. Public repository: https://github.com/zhaojie-tech/waypoint. 中文版: [`README.zh-CN.md`](README.zh-CN.md).
 <!-- publish:notice:end -->
 
 ## Overview
@@ -28,11 +28,11 @@ quoted from its documentation or marked as a gap.
 ## Quickstart
 
 <!-- publish:quickstart:start -->
-Prerequisites: JDK 17+ (JDK 21 is verified by CI; local runs at v0.1.0 used JDK 17), `bash` and `find`. The
+Prerequisites: JDK 17+ (JDK 21 is verified by CI; local runs at v0.1.1 used JDK 17), `bash` and `find`. The
 gate needs no third-party runtime dependencies and no network access.
 
 ```bash
-git clone https://github.com/zhaojie-tech/waypoint.git && cd waypoint   # or download the v0.1.0 archive
+git clone https://github.com/zhaojie-tech/waypoint.git && cd waypoint   # or download the v0.1.1 archive
 # from the repository root: one command, prints all numbers, exit code is the verdict
 ./gate.sh
 ```
@@ -46,7 +46,7 @@ environment matrix and expected output: [`docs/reproducibility.md`](docs/reprodu
 
 ```bash
 ./mvnw -B -q -DskipTests package
-java -jar target/waypoint-0.1.0.jar check \
+java -jar target/waypoint-0.1.1.jar check \
   --events examples/external-log/violation/events.jsonl \
   --ledger examples/external-log/violation/ledger.jsonl \
   --meta   examples/external-log/violation/meta.json
@@ -68,7 +68,7 @@ raises `C2`.
 | Mutation calibration | <!-- gate:mutants -->13/13<!-- /gate:mutants --> | every injected violation is caught on its target contract (catalogue in `docs/mutations.md`) |
 | Gate verdict | <!-- gate:pass -->PASS<!-- /gate:pass --> | computed from numeric fields, not from report text; 5 negative controls must exit non-zero |
 | Report sha256 | <!-- gate:sha -->09fa81ef83af05664b743b130849837af1186869fa11ba632a1c80e66f8b8f79<!-- /gate:sha --> | byte-level identity of the whole gate report |
-| Version | <!-- gate:version -->0.1.0<!-- /gate:version --> | release this README describes |
+| Version | <!-- gate:version -->0.1.1<!-- /gate:version --> | release this README describes |
 
 The Chinese README carries the same markers and the CI job repeats the check, so the numbers cannot drift
 between the documents. `build/gate-result.json` is the machine-readable source, and the gate's PASS predicate
@@ -163,7 +163,8 @@ Prerequisites, expected output and the parts that are not reproducible on this m
 | P2 | real-framework comparison: 10 findings, 3 frameworks tested, 2 pinned but untested | complete (evidence graded) |
 | P3 | adapter prototype: real checker × 2 frameworks × 4 fault forms, coverage and unobservable items disclosed | complete |
 | P4 | S1/S2 cancellation-boundary matrix with active denominators and sensitivity, plus the real-LLM SSE byte-prefix smoke | complete |
-| v0.1.0 | structured gate verdict, crash semantics aligned with the docs, C1–C6/S1–S3 and L1 implementation, CLI/API, CI, packaging | this release |
+| v0.1.1 | DOI and citation metadata, CI-recorded JDK 21 wording, results provenance and badge | this release |
+| v0.1.0 | structured gate verdict, crash semantics aligned with the docs, C1–C6/S1–S3 and L1 implementation, CLI/API, CI, packaging | first public release |
 
 Not tested, and recorded as such: power-loss semantics, distributed or multi-node runs, Diagrid Catalyst and
 AgentScope Java (pinned coordinates, no runnable environment), and recovery engines driven by a real LLM.
@@ -187,14 +188,14 @@ AgentScope Java (pinned coordinates, no runnable environment), and recovery engi
 7. P3 adapters synthesize `ApplyRecord` metadata where the framework does not expose record indices, and the
    report marks those fields as synthetic. C2 conclusions from P3 are therefore limited to effect counts.
 8. There is no performance work, no production hardening and no compatibility guarantee across versions.
-9. JDK 21 is verified by CI (https://github.com/zhaojie-tech/waypoint/actions/runs/39228659294); local runs at v0.1.0 used JDK 17.
+9. JDK 21 is verified by CI (https://github.com/zhaojie-tech/waypoint/actions/runs/39228659294); local runs at v0.1.1 used JDK 17.
 10. Do not run agents on this code. It is a checker and a replication package, not production-ready software.
 
 ## Citation
 
 <!-- publish:citation:start -->
-- This artifact: `Jie Zhao. Waypoint: a machine-checkable recovery contract for agent runtimes, v0.1.0 (2026).`
-  Machine-readable metadata: [`CITATION.cff`](CITATION.cff). DOI: [`10.5281/zenodo.23470416`](https://doi.org/10.5281/zenodo.23470416).
+- This artifact: `Jie Zhao. Waypoint: a machine-checkable recovery contract for agent runtimes, v0.1.1 (2026).`
+  Machine-readable metadata: [`CITATION.cff`](CITATION.cff). DOI: [`10.5281/zenodo.23470386`](https://doi.org/10.5281/zenodo.23470386) (concept DOI, latest version).
 - The paper behind C1–C6: `Sajjad Khan. Resume Means Resume. arXiv:2608.03836, 2026.`
   <https://arxiv.org/abs/2608.03836>
 - Framework observations use pinned versions and quoted public documentation. URLs, section anchors and

@@ -167,7 +167,7 @@ class CliTest {
                 "--meta", f[2].toString(), "--format", "json");
         assertEquals(0, r.code(), r.err());
         Json.Obj json = Json.parseObject(r.out());
-        assertEquals("0.1.0", json.string("version", null));
+        assertEquals("0.1.1", json.string("version", null));
         assertEquals("cli-test/clean", json.string("scenario", null));
         assertEquals(0, json.array("findings").size());
         Json.Obj summary = json.object("summary");

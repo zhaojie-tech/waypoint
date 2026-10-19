@@ -44,7 +44,7 @@ public final class Checker {
         public boolean forkScenario;
         public String stateHash = "";
 
-        // ---- frozen v0.1.0 observation fields (all defaulted, backward compatible) ----
+        // ---- frozen observation fields (introduced in v0.1.0, unchanged here) ----
         /** C1: step paths the run is expected to complete (structural). */
         public List<String> expectedSteps = List.of();
         /** C3: adapter-observed child event streams; when non-empty the checker
